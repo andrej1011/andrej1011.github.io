@@ -41,7 +41,7 @@
         .profile-photo {
             width: 150px;
             height: 150px;
-            border-radius: 50%; /* Circle shape */
+            border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1rem;
             border: 3px solid #f0f0f0;
@@ -60,17 +60,15 @@
             font-size: 1.0rem;
             font-weight: 400;
             color: #666;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        
         .contact-links {
-            margin: 3rem auto 2rem auto;
+            margin: 0 auto;
+            margin-top: 2rem;
             display: flex;
             justify-content: center;
             gap: 10px;
-            border-top: 1px solid #eee;
-            padding-top: 2rem;
             align-items: stretch;
         }
 
@@ -79,10 +77,8 @@
             align-items: center;
             justify-content: center;
             flex-grow: 1;
-            
             height: 40px;
             padding: 0 5px;
-            
             font-size: 0.9rem;
             font-weight: 600;
             text-decoration: none;
@@ -110,7 +106,7 @@
         }
 
         .btn-linkedin-simple {
-            background-color: #0A66C2; /* LinkedIn Plava */
+            background-color: #0A66C2;
             color: white;
             min-width: 100px;
         }
@@ -124,7 +120,6 @@
             flex-grow: 1;
             max-width: 180px;
         }
-
 
         .section-title {
             text-align: center;
@@ -227,7 +222,13 @@
         .carousel-slide img:hover {
             transform: scale(1.02);
         }
-        
+
+        /* cert & secplus carousel: single centered image */
+        #carousel-cert .carousel-slide,
+        #carousel-secplus .carousel-slide {
+            min-width: 100%;
+        }
+
         /* Navigation Buttons (Carousel) */
         .carousel-btn {
             position: absolute;
@@ -266,7 +267,7 @@
         .dot {
             width: 8px;
             height: 8px;
-            background: rgba(0, 0, 0, 0.3); /* Darker for light background */
+            background: rgba(0, 0, 0, 0.3);
             border-radius: 50%;
             cursor: pointer;
             transition: background 0.3s;
@@ -285,7 +286,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden; /* Prevent scrolling inside lightbox container */
+            overflow: hidden;
             background-color: rgba(255, 255, 255, 0.98); 
             align-items: center;
             justify-content: center;
@@ -297,7 +298,6 @@
             max-height: 90vh;
             border-radius: 4px;
             box-shadow: 0 5px 30px rgba(0,0,0,0.15);
-            /* Smooth transition for image swap */
             transition: opacity 0.2s ease;
         }
 
@@ -323,7 +323,7 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 15%; /* Clickable zone width */
+            width: 15%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -354,7 +354,6 @@
             padding-right: 20px;
         }
 
-        /* Mobile specific lightbox adjustments */
         @media (max-width: 600px) {
             .lightbox-nav-btn {
                 width: 20%;
@@ -367,7 +366,7 @@
             font-size: 1.05rem;
             color: #222;
             text-align: justify;
-            border-left: 3px solid #cc0000; /* Emphasis line */
+            border-left: 3px solid #cc0000;
             padding-left: 15px;
         }
         
@@ -411,6 +410,145 @@
         .btn-pres { background-color: #FDB515; color: #222; }
         .btn-drive { background-color: #009647; }
 
+        /* DARK MODE TOGGLE BUTTON */
+        #dark-mode-toggle {
+            position: fixed;
+            top: 16px;
+            right: 20px;
+            z-index: 9999;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            padding: 8px 16px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+            color: #333;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        #dark-mode-toggle:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+        }
+
+        /* DARK MODE STYLES */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        body.dark-mode header {
+            border-bottom-color: #333;
+        }
+        body.dark-mode h2 {
+            color: #aaa;
+        }
+        body.dark-mode .profile-photo {
+            border-color: #333;
+            background-color: #2a2a2a;
+        }
+        body.dark-mode .btn-cv {
+            background-color: #E0E0E0;
+            color: #333;
+            border-color: #ddd;
+        }
+        body.dark-mode .section-title {
+            color: #e05070;
+        }
+        body.dark-mode .project-link {
+            color: #e0e0e0;
+        }
+        body.dark-mode .project-link:hover {
+            border-bottom-color: #e05070;
+        }
+        body.dark-mode .project-tech {
+            color: #bbb;
+            border-color: #444;
+            background-color: #1e1e1e;
+        }
+        body.dark-mode .short-desc {
+            color: #aaa;
+        }
+        body.dark-mode .carousel-container {
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        body.dark-mode .carousel-slide {
+            background-color: #1e1e1e;
+        }
+        body.dark-mode .dot {
+            background: rgba(255,255,255,0.2);
+        }
+        body.dark-mode .dot.active {
+            background: #e05070;
+        }
+        body.dark-mode .lightbox {
+            background-color: rgba(0,0,0,0.97);
+        }
+        body.dark-mode .close-lightbox {
+            color: #ccc;
+        }
+        body.dark-mode .lightbox-nav-btn {
+            color: #888;
+        }
+        body.dark-mode .lightbox-nav-btn:hover {
+            color: #e05070;
+        }
+        body.dark-mode .long-desc {
+            color: #ccc;
+            border-left-color: #e05070;
+        }
+        body.dark-mode footer {
+            color: #666;
+        }
+        body.dark-mode #dark-mode-toggle {
+            background: #2a2a2a;
+            border-color: #444;
+            color: #e0e0e0;
+        }
+
+        /* COLLAPSIBLE SECTION */
+        .collapsible-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            user-select: none;
+            margin-bottom: 0;
+        }
+        .collapsible-header:hover .section-title {
+            opacity: 0.8;
+        }
+        .collapsible-header .section-title {
+            font-size: 0.78rem;
+        }
+        .collapsible-arrow {
+            font-size: 0.85rem;
+            color: #c41230;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+        .collapsible-arrow.open {
+            transform: rotate(180deg);
+        }
+        .collapsible-body {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.4s ease, margin-top 0.3s ease;
+            margin-top: 0;
+        }
+        .collapsible-body.open {
+            max-height: 5000px;
+            margin-top: 2rem;
+        }
+        .collapsible-wrapper {
+            margin-bottom: 3rem;
+        }
+        body.dark-mode .collapsible-arrow {
+            color: #e05070;
+        }
 
         /* RESPONSIVE */
         @media (max-width: 600px) {
@@ -437,7 +575,6 @@
             .cmu-btn {
                 width: 100%;
             }
-             /* Adjust contact links on small screens */
             .contact-links {
                 flex-direction: column;
                 gap: 8px;
@@ -451,33 +588,184 @@
 </head>
 <body>
 
-    <!-- LIGHTBOX ELEMENT -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
         <span class="close-lightbox" onclick="closeLightbox(event)">&times;</span>
-        
-        <!-- Navigation inside Lightbox -->
         <a class="lightbox-nav-btn lightbox-prev" onclick="changeLightboxSlide(-1); event.stopPropagation();">&#10094;</a>
         <a class="lightbox-nav-btn lightbox-next" onclick="changeLightboxSlide(1); event.stopPropagation();">&#10095;</a>
-        
         <img class="lightbox-content" id="lightbox-img" onclick="event.stopPropagation()">
     </div>
 
+    <button id="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle dark mode">
+        <span id="dark-mode-icon">🌙</span>
+    </button>
+
     <div class="container">
         
-        <!-- HEADER -->
         <header>
             <img src="portoflio_files/9mz75cvkHprnHvL.png" alt="Profile Photo" class="profile-photo">
-            
             <h1>Andrej Rajkov</h1>
             <h2>Student of Information Technology at University of Novi Sad</h2>
-            
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/andrej-rajkov/" target="_blank" class="contact-btn btn-linkedin-simple">LinkedIn</a>
+                <a href="portoflio_files/CV Andrej Rajkov Mar2026.pdf" download class="contact-btn btn-cv">Download CV</a>
+                <a href="https://github.com/andrej1011" target="_blank" class="contact-btn btn-github-simple">GitHub</a>
+            </div>
         </header>
 
-        <!-- PORTFOLIO LABEL -->
+        <div class="collapsible-wrapper">
+            <div class="collapsible-header" onclick="toggleUpcoming()">
+                <div class="section-title" style="margin-bottom:0;">UPCOMING PROJECTS</div>
+                <span class="collapsible-arrow" id="upcoming-arrow">▼</span>
+            </div>
+            <div class="collapsible-body" id="upcoming-body">
+                <article class="project">
+                    <div class="project-header">
+                        <span class="project-link">Bus Schedule Board</span>
+                        <div class="tech-stack">
+                            <span class="project-tech">ESP32</span>
+                            <span class="project-tech">IoT</span>
+                            <span class="project-tech">C++</span>
+                            <span class="project-tech">Dot Matrix</span>
+                        </div>
+                    </div>
+                    <p class="short-desc">A real-time bus arrival display built with ESP32 and a dot matrix LED panel, showing the next 3 buses at the stop near my student dorm.</p>
+                    <div class="carousel-container" id="carousel-bus">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="portoflio_files/bustable1.jpg" alt="Bus Board Photo 1" onclick="openLightbox('bus', 0); event.stopPropagation();">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="portoflio_files/bus-table2.png" alt="Bus Board Photo 2" onclick="openLightbox('bus', 1); event.stopPropagation();">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="portoflio_files/bustable3.png" alt="Bus Board Photo 3" onclick="openLightbox('bus', 2); event.stopPropagation();">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev-btn" onclick="moveSlide('bus', -1)">&#10094;</button>
+                        <button class="carousel-btn next-btn" onclick="moveSlide('bus', 1)">&#10095;</button>
+                        <div class="carousel-dots">
+                            <div class="dot active" onclick="goToSlide('bus', 0)"></div>
+                            <div class="dot" onclick="goToSlide('bus', 1)"></div>
+                            <div class="dot" onclick="goToSlide('bus', 2)"></div>
+                        </div>
+                    </div>
+                    <div class="long-desc">
+                        <p>Each row shows a bus number and minutes until arrival, fetched live from the Novi Sad's NSmart city transit API. The entire build cost under $20 sourced from AliExpress. A practical IoT project that solves a real daily problem while teaching me microelectronics, embedded C++, and WiFi networking on bare hardware. <br>
+                            In April and May I will also be attending the BIP <em>"Internet of Things and 3D Printing"</em> course at the University of Novi Sad.</p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <div class="project-header">
+                        <span class="project-link">PAN Cybersecurity Academy</span>
+                        <div class="tech-stack">
+                            <span class="project-tech">Palo Alto Networks</span>
+                            <span class="project-tech">Cybersecurity</span>
+                            <span class="project-tech">ARC Belgrade</span>
+                        </div>
+                    </div>
+                    <p class="short-desc">A 4-month intensive cybersecurity programme at the American Resource Center in Belgrade, in partnership with Palo Alto Networks.</p>
+                    <div class="carousel-container" id="carousel-pan">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="portoflio_files/Pan1.png" alt="PAN Academy 1" onclick="openLightbox('pan', 0); event.stopPropagation();">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="portoflio_files/PAN2.png" alt="PAN Academy 2" onclick="openLightbox('pan', 1); event.stopPropagation();">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev-btn" onclick="moveSlide('pan', -1)">&#10094;</button>
+                        <button class="carousel-btn next-btn" onclick="moveSlide('pan', 1)">&#10095;</button>
+                        <div class="carousel-dots">
+                            <div class="dot active" onclick="goToSlide('pan', 0)"></div>
+                            <div class="dot" onclick="goToSlide('pan', 1)"></div>
+                        </div>
+                    </div>
+                    <div class="long-desc">
+                        <p>Running from February 27 to June 26, 2026, the academy covers network defense, cloud security, threat prevention, and hands-on labs taught by professor Slavko Gajin. The programme leads to globally recognized Palo Alto Networks certifications and is hosted at ARC Ložionica, Belgrade.</p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <div class="project-header">
+                        <span class="project-link">Hospital Data System</span>
+                        <div class="tech-stack">
+                            <span class="project-tech">Java</span>
+                            <span class="project-tech">Spring Boot</span>
+                            <span class="project-tech">MySQL</span>
+                            <span class="project-tech">GDPR</span>
+                        </div>
+                    </div>
+                    <p class="short-desc">A full three-tier hospital information system built as the project for the Development of Information Systems course.</p>
+                    <div class="long-desc">
+                        <p>The project requires designing a complete information system from database schema through business logic to UI. I chose a hospital data system specifically to practice implementing <strong>GDPR compliance</strong> and security regulations in a real-world sensitive data context. Built using Java Servlets, Spring Boot, Spring MVC, Spring Data, and MySQL.</p>
+                    </div>
+                    
+                </article>
+
+                <article class="project">
+                    <div class="project-header">
+                        <span class="project-link">Barbell Gym Calculator</span>
+                        <div class="tech-stack">
+                            <span class="project-tech">Angular</span>
+                            <span class="project-tech">TypeScript</span>
+                            <span class="project-tech">PWA</span>
+                        </div>
+                    </div>
+                    <p class="short-desc">Progressive Web App that calculates barbell plate weights</p>
+                    <div class="carousel-container" id="carousel-gym">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="portoflio_files/gymapp1.png" alt="Gym App Screen 1" onclick="openLightbox('gym', 0); event.stopPropagation();">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="portoflio_files/gymapp2.png" alt="Gym App Screen 2" onclick="openLightbox('gym', 1); event.stopPropagation();">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="portoflio_files/gymapp3.png" alt="Gym App Screen 3" onclick="openLightbox('gym', 2); event.stopPropagation();">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="portoflio_files/gymapp4.png" alt="Gym App Screen 4" onclick="openLightbox('gym', 3); event.stopPropagation();">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev-btn" onclick="moveSlide('gym', -1)">&#10094;</button>
+                        <button class="carousel-btn next-btn" onclick="moveSlide('gym', 1)">&#10095;</button>
+                        <div class="carousel-dots">
+                            <div class="dot active" onclick="goToSlide('gym', 0)"></div>
+                            <div class="dot" onclick="goToSlide('gym', 1)"></div>
+                            <div class="dot" onclick="goToSlide('gym', 2)"></div>
+                            <div class="dot" onclick="goToSlide('gym', 3)"></div>
+                        </div>
+                    </div>
+                    <div class="long-desc">
+                        <p>Enter your target barbell weight and the app tells you exactly which plates to load. Works on both Android and iOS as a PWA — no App Store or Play Store required. All data is saved locally on-device. The UX was originally prototyped and validated as an assignment for the <em>Usability, User Experience and Analytics</em> course at a Finnish university.</p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <div class="project-header">
+                        <span class="project-link">CompTIA Security+</span>
+                        <div class="tech-stack">
+                            <span class="project-tech">CompTIA</span>
+                            <span class="project-tech">Cybersecurity</span>
+                            <span class="project-tech">SY0-701</span>
+                        </div>
+                    </div>
+                    <p class="short-desc">Planning to take the CompTIA Security+ exam in late May or early June 2026</p>
+                    <div class="carousel-container" id="carousel-secplus">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="portoflio_files/securitypluslogo.png" alt="CompTIA Security+ Logo" onclick="openLightbox('secplus', 0); event.stopPropagation();">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
         <div class="section-title">PORTFOLIO</div>
 
         <main>
-            <!-- PROJECT 1: FPGA Visualization Tool -->
             <article class="project">
                 <div class="project-header">
                     <a href="https://github.com/andrej1011/pris_team6" target="_blank" class="project-link">FPGA Router & Congestion Visualizer</a>
@@ -489,27 +777,20 @@
                     </div>
                 </div>
                 <p class="short-desc">High-performance visualization tool for analyzing complex routing congestion and signal conflicts in FPGA architecture.</p>
-                
-                <!-- CAROUSEL IMPLEMENTATION -->
                 <div class="carousel-container" id="carousel-netguard">
                     <div class="carousel-track">
-                        <!-- Slide 1: Signal Routing -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/391e86ce-d121-442c-82e3-09020a17b3d7" alt="FPGA Signal Routing" onclick="openLightbox('netguard', 1); event.stopPropagation();">
                         </div>
-                        <!-- Slide 2: Bounding Boxes -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/0ecfdb18-ca7a-4270-b6f9-5388b8aca4ab" alt="FPGA Bounding Box" onclick="openLightbox('netguard', 2); event.stopPropagation();">
                         </div>
-                        <!-- Slide 3: Main Menu -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/a81d3374-c669-43dc-91fb-302d426d7ec0" alt="FPGA CLI Main Menu" onclick="openLightbox('netguard', 0); event.stopPropagation();">
                         </div>
-                        <!-- Slide 4: Heatmap -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/b6437f03-4cd8-4acd-a318-da99ac323b3d" alt="FPGA Heatmap" onclick="openLightbox('netguard', 3); event.stopPropagation();">
                         </div>
-                        <!-- Slide 5: Log Report -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/ff5976f0-2098-44bd-8769-7868f59d81d8" alt="FPGA Log" onclick="openLightbox('netguard', 4); event.stopPropagation();">
                         </div>
@@ -523,7 +804,6 @@
                         <div class="dot" data-slide="3" onclick="goToSlide('netguard', 3)"></div>
                     </div>
                 </div>
-
                 <div class="long-desc">
                     <p>
                         <strong>Agile Development & Research:</strong> Adopted strict Scrum methodology to conquer a complex, research-heavy topic in an unfamiliar domain. Rapidly delivered a functional product through iterative sprints and precise estimation, proving technical adaptability and team leadership under tight constraints.
@@ -535,8 +815,6 @@
                         <strong>Cybersecurity Implication:</strong> FPGAs provide hardware-level reconfigurability, allowing for the dynamic updating of cryptographic primitives, preventing Spectre attacks.
                     </p>
                 </div>
-
-                <!-- PROJECT RESOURCES BUTTONS -->
                 <div class="project-resources">
                     <a href="https://stefannikolicns.github.io/teaching/" target="_blank" class="cmu-btn btn-prof">Professor's Course Website</a>
                     <a href="https://docs.google.com/presentation/d/1xvwr41GxjuPq1TVDqYr0OSXgnEf8y_JdvQ0SFFXdl6A/edit?usp=sharing" target="_blank" class="cmu-btn btn-pres">Project Presentation</a>
@@ -544,7 +822,27 @@
                 </div>
             </article>
 
-            <!-- PROJECT 2: CS340 Projects -->
+            <article class="project">
+                <div class="project-header">
+                    <span class="project-link">CompTIA Network+ Certification</span>
+                    <div class="tech-stack">
+                        <span class="project-tech">Networks</span>
+                        <span class="project-tech">CompTIA</span>
+                        <span class="project-tech">N10-009</span>
+                    </div>
+                </div>
+                <div class="carousel-container" id="carousel-cert">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="portoflio_files/NPLUS_CERTIFICATE_AR.png" alt="CompTIA Network+ Certificate – Andrej Rajkov" onclick="openLightbox('cert', 0); event.stopPropagation();">
+                        </div>
+                    </div>
+                </div>
+                <div class="project-resources">
+                    <a href="https://cp.certmetrics.com/CompTIA/en/public/verify/credential/6ebd016ecab04fa0beba8787ec657062" target="_blank" class="cmu-btn btn-drive">Verify Certificate</a>
+                </div>
+            </article>
+
             <article class="project">
                 <div class="project-header">
                     <a href="https://github.com/andrej1011/cs340p1/" target="_blank" class="project-link">CS340 Projects</a>
@@ -556,21 +854,16 @@
                     </div>
                 </div>
                 <p class="short-desc">Implementation of the full network stack from scratch as part of CS340 "Introduction to Computer Networking" curriculum.</p>
-                
-                <!-- DIAGRAM CAROUSEL (Software Architecture) -->
                 <div class="carousel-container" id="carousel-network">
                     <div class="carousel-track">
-                        <!-- Diagram 1: Project 1 - HTTP Server/Client Architecture -->
                         <div class="carousel-slide">
                             <img src="portoflio_files/cs340_p1_diagram.png" alt="Project 1 Software Architecture" onclick="openLightbox('network', 0); event.stopPropagation();">
                         </div>
-                        <!-- Diagram 2: Project 2 - Reliable Transport Architecture -->
                         <div class="carousel-slide">
                             <img src="portoflio_files/cs340_p2_diag.png" alt="Project 2 Software Architecture" onclick="openLightbox('network', 1); event.stopPropagation();">
                         </div>
                     </div>
                 </div>
-
                 <div class="long-desc">
                     <p>
                         Self-studied <strong>CS340: "Introduction to Computer Networking"</strong> course from Northwestern University by professor Steve Tarzia, utilizing the full lecture series available via YouTube. This in-depth course uses a bottom-up approach to teach the 7-layer model OSI model protocols as well as the application and usage of modern network protocols. Coursework culminated in the development of the following student projects:
@@ -578,11 +871,9 @@
                         <strong>Project 1: HTTP Server & Client:</strong> Developed a multi-threaded web server and client that manually parses raw byte streams into HTTP/1.0 messages. The client handles 301/302 redirects, content-type validation, and status code logic completely manually.
                     </p>
                     <p>
-                        <strong>Project 2: Reliable Transport Protocol:</strong> Designed and implemented a reliable transport protocol, described as "primitive version of TCP" by the professor, over unreliable UDP (`LossyUDP`) to guarantee delivery in a simulated high-latency, packet-dropping network. Engineered mechanisms for Stop-and-Wait ARQ, MD5 checksumsfor data integrity, and a threaded listener to handle asynchronous ACKs. This project simulated kernel-level networking challenges, teaching me how reliability, flow control, and connection teardown (FIN/ACK) actually work.
+                        <strong>Project 2: Reliable Transport Protocol:</strong> Designed and implemented a reliable transport protocol, described as "primitive version of TCP" by the professor, over unreliable UDP (`LossyUDP`) to guarantee delivery in a simulated high-latency, packet-dropping network. Engineered mechanisms for Stop-and-Wait ARQ, MD5 checksums for data integrity, and a threaded listener to handle asynchronous ACKs. This project simulated kernel-level networking challenges, teaching me how reliability, flow control, and connection teardown (FIN/ACK) actually work.
                     </p>
                 </div>
-
-                <!-- BUTTONS FOR PROJECT 2 -->
                 <div class="project-resources">
                     <a href="https://stevetarzia.com/teaching/" target="_blank" class="cmu-btn btn-prof">Prof. Tarzia's Course Website</a>
                     <a href="https://github.com/andrej1011/cs340p1/" target="_blank" class="cmu-btn btn-drive">Project 1</a>
@@ -590,7 +881,6 @@
                 </div>
             </article>
 
-            <!-- PROJECT 3: Subway2D -->
             <article class="project">
                 <div class="project-header">
                     <a href="https://github.com/andrej1011/Subway2D" target="_blank" class="project-link">Subway2D</a>
@@ -600,26 +890,21 @@
                         <span class="project-tech">Game Design</span>
                     </div>
                 </div>
-                <p class="short-desc">A 2D endless runner game developed in Unity.
+                <p class="short-desc">A 2D endless runner game developed in Unity.</p>
                 <div class="carousel-container" id="carousel-subway">
                     <div class="carousel-track">
-                        <!-- Slide 1 -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/d3510ef8-7b39-44b1-bcb0-6a5a51b34253" alt="Subway2D Screenshot 1" onclick="openLightbox('subway', 0); event.stopPropagation();">
                         </div>
-                        <!-- Slide 2 -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/173c6191-613a-4026-9f24-516af884e023" alt="Subway2D Screenshot 2" onclick="openLightbox('subway', 1); event.stopPropagation();">
                         </div>
-                        <!-- Slide 3 -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/cd1a2912-6bd2-41cf-98c5-99d39ed98d6c" alt="Subway2D Screenshot 3" onclick="openLightbox('subway', 2); event.stopPropagation();">
                         </div>
-                        <!-- Slide 4 -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/747dfd70-3fe3-4666-bc9a-3e06c70ce41b" alt="Subway2D Screenshot 4" onclick="openLightbox('subway', 3); event.stopPropagation();">
                         </div>
-                        <!-- Slide 5 -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/d7290b20-3502-4592-a699-559af488db3b" alt="Subway2D Screenshot 5" onclick="openLightbox('subway', 4); event.stopPropagation();">
                         </div>
@@ -634,20 +919,17 @@
                         <div class="dot" data-slide="4" onclick="goToSlide('subway', 4)"></div>
                     </div>
                 </div>
-
                 <div class="long-desc">
                     <p>
-                        <strong>Subway2D</strong> is an endless runner game developed in Unity, created as the practical component for the university course <i>Seminar C: Unity Game Development</i>. Key technical contributions include a relative velocity system for simulating movement without player displacement, object pooling for memory-efficient procedural generation, and linear interpolationfor dynamic difficulty scaling. The study demonstrates that 3D gameplay loops can be preserved in 2D through precise lane-snapping logic and speed manipulation.
+                        <strong>Subway2D</strong> is an endless runner game developed in Unity, created as the practical component for the university course <i>Seminar C: Unity Game Development</i>. Key technical contributions include a relative velocity system for simulating movement without player displacement, object pooling for memory-efficient procedural generation, and linear interpolation for dynamic difficulty scaling. The study demonstrates that 3D gameplay loops can be preserved in 2D through precise lane-snapping logic and speed manipulation.
                     </p>
                 </div>
-                
                 <div class="project-resources">
                     <a href="https://github.com/andrej1011/Subway2D/releases/tag/main" target="_blank" class="cmu-btn btn-drive">Download Game</a>
                     <a href="portoflio_files/Seminarski Rad C_Andrej Rajkov.pdf" target="_blank" class="cmu-btn btn-pres">Seminar Thesis Paper</a>
-                    </div>
+                </div>
             </article>
 
-            <!-- PROJECT 4: Baseball.rs -->
             <article class="project">
                 <div class="project-header">
                     <a href="https://andrej1011.github.io/baseball.rs/" target="_blank" class="project-link">Baseball.rs</a>
@@ -658,27 +940,20 @@
                     </div>
                 </div>
                 <p class="short-desc">Central online hub for the Serbian baseball community.</p>
-                
-                <!-- CAROUSEL -->
                 <div class="carousel-container" id="carousel-baseball">
                     <div class="carousel-track">
-                        <!-- Slide 1 -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/4e46a01c-1385-44f5-9d3b-33aeda327100" alt="Baseball.rs Homepage" onclick="openLightbox('baseball', 0); event.stopPropagation();">
                         </div>
-                        <!-- Slide 2 -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/a478e5b6-ed0d-4365-9ad3-787bb271fd9e" alt="Baseball.rs Guide" onclick="openLightbox('baseball', 1); event.stopPropagation();">
                         </div>
-                        <!-- Slide 3 -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/bc93b718-dd54-4116-9269-78ee8aedc0e7" alt="Baseball.rs History" onclick="openLightbox('baseball', 2); event.stopPropagation();">
                         </div>
-                        <!-- Slide 4 -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/3f5cca44-490c-4e6f-9505-08267ebee813" alt="Baseball.rs Clubs" onclick="openLightbox('baseball', 3); event.stopPropagation();">
                         </div>
-                        <!-- Slide 5 -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/52bd7f35-ad6d-4f13-b6ba-c53ed059fad6" alt="Baseball.rs Mobile View" onclick="openLightbox('baseball', 4); event.stopPropagation();">
                         </div>
@@ -693,19 +968,16 @@
                         <div class="dot" data-slide="4" onclick="goToSlide('baseball', 4)"></div>
                     </div>
                 </div>
-
                 <div class="long-desc">
                     <p>
                         <strong>Baseball.rs</strong> was developed as the final practical project for the <i>"Software Lab 2: Web Design"</i> course to demonstrate mastery of fundamental frontend technologies. It functions as the central digital hub for the underground Serbian baseball community, providing a professional online presence for a sport that has historically lacked visibility in the region. The technical architecture relies on a lightweight stack using HTML5, CSS, and JavaScript.
                     </p>
                 </div>
-                
                 <div class="project-resources">
                     <a href="https://andrej1011.github.io/baseball.rs/" target="_blank" class="cmu-btn btn-drive">Visit Website</a>
                 </div>
             </article>
 
-            <!-- PROJECT 5: CBAQ Discord Bot -->
             <article class="project">
                 <div class="project-header">
                     <a href="https://github.com/gitLofer/CBAQ" target="_blank" class="project-link">CBAQ</a>
@@ -724,7 +996,6 @@
                 </div>
             </article>
 
-            <!-- PROJECT 6: PONG for ZX Spectrum-->
             <article class="project">
                 <div class="project-header">
                     <a href="https://github.com/andrej1011/petnica_pong/" class="project-link">PONG for ZX Spectrum</a>
@@ -735,19 +1006,14 @@
                     </div>
                 </div>
                 <p class="short-desc">Two-player implementation of the classic arcade game PONG, built in Assembly for the ZX Spectrum.</p>
-                
-                <!-- CAROUSEL IMPLEMENTATION -->
                 <div class="carousel-container" id="carousel-pong">
                     <div class="carousel-track">
-                        <!-- Slide 1 -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/f5c4a187-5fde-45f8-908d-49e3b41f6257" alt="PONG Gameplay 1" onclick="openLightbox('pong', 0); event.stopPropagation();">
                         </div>
-                        <!-- Slide 2 -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/93285a0e-cd03-4234-8019-dc944e9cefe1" alt="PONG Gameplay 2" onclick="openLightbox('pong', 1); event.stopPropagation();">
                         </div>
-                        <!-- Slide 3 -->
                         <div class="carousel-slide">
                             <img src="https://github.com/user-attachments/assets/d12b0c6e-b6f0-4297-8eb4-b0f8d5404695" alt="PONG Gameplay 3" onclick="openLightbox('pong', 2); event.stopPropagation();">
                         </div>
@@ -760,34 +1026,63 @@
                         <div class="dot" data-slide="2" onclick="goToSlide('pong', 2)"></div>
                     </div>
                 </div>
-
                 <div class="long-desc">
                     <p>
                         Developed as the final project for the Computer Science Workshop at Petnica Science Center, this project demanded a deep dive into bare-metal programming. Working within the severe memory and processing constraints of the Z80 hardware, I engineered the entire game loop, physics engine, and rendering routines directly in <strong>Z80 assembly</strong>. This required manual memory management and direct hardware manipulation to achieve optimal performance, demonstrating a fundamental understanding of low-level system architecture.
                     </p>
                 </div>
-
-                <!-- PROJECT RESOURCES BUTTONS -->
                 <div class="project-resources">
                     <a href="https://github.com/andrej1011/petnica_pong/blob/main/PONG_FINAL.asm" target="_blank" class="cmu-btn btn-drive">View Source Code</a>
                 </div>
             </article>
-            <!-- PROJECT 7: Chaslav - The Endless Runner -->
-            
+
+            <article class="project">
+                <div class="project-header">
+                    <a href="https://github.com/andrej1011/chaslav_run" target="_blank" class="project-link">Chaslav - The Endless Runner</a>
+                    <div class="tech-stack">
+                        <span class="project-tech">Game Design</span>
+                        <span class="project-tech">Unity</span>
+                        <span class="project-tech">C#</span>
+                    </div>
+                </div>
+                <p class="short-desc">A collaborative 2D endless runner built as a high-fidelity tribute to the Google Chrome Dino game.</p>
+                <div class="carousel-container" id="carousel-chaslav">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="https://github.com/user-attachments/assets/7330aa60-4dcb-405b-920a-72b01398eadd" alt="Chaslav Gameplay 1" onclick="openLightbox('chaslav', 0); event.stopPropagation();">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://github.com/user-attachments/assets/70d412bf-9bd8-46e9-b5c3-d066b92437e2" alt="Chaslav Gameplay 2" onclick="openLightbox('chaslav', 1); event.stopPropagation();">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://github.com/user-attachments/assets/80f5b51f-675f-4b83-a600-de6bc19fd126" alt="Chaslav Gameplay 3" onclick="openLightbox('chaslav', 2); event.stopPropagation();">
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev-btn" onclick="moveSlide('chaslav', -1)">&#10094;</button>
+                    <button class="carousel-btn next-btn" onclick="moveSlide('chaslav', 1)">&#10095;</button>
+                    <div class="carousel-dots">
+                        <div class="dot active" data-slide="0" onclick="goToSlide('chaslav', 0)"></div>
+                        <div class="dot" data-slide="1" onclick="goToSlide('chaslav', 1)"></div>
+                        <div class="dot" data-slide="2" onclick="goToSlide('chaslav', 2)"></div>
+                    </div>
+                </div>
+                <div class="long-desc">
+                    <p>
+                        Developed in 2019 during our freshman year of high school, this project was a collaborative effort between myself and three of my classmates to replicate the core mechanics of the famous Google Chrome Dino game using the Unity engine. We implemented custom physics for jumping, dynamic speed scaling, object pooling for obstacles, and parallax background scrolling to achieve a polished, responsive feel. The project served as an early foundation for understanding team dynamics, version control, and the complete game development pipeline from design and art to programming and sound.
+                    </p>
+                </div>
+                <div class="project-resources">
+                    <a href="https://github.com/andrej1011/chaslav_run/releases/tag/release" target="_blank" class="cmu-btn btn-drive">Download Game</a>
+                </div>
+            </article>
+
         </main>
         
-        <div class="contact-links">
-            <a href="https://github.com/andrej1011" target="_blank" class="contact-btn btn-github-simple">GitHub</a>
-            <a href="portoflio_files/CV Andrej Rajkov Dec2025.pdf" download class="contact-btn btn-cv">Download CV</a>
-            <a href="https://www.linkedin.com/in/andrej-rajkov/" target="_blank" class="contact-btn btn-linkedin-simple">LinkedIn</a>
-        </div>
-
         <footer style="text-align: center; font-size: 0.8rem; color: #999; margin-top: 2rem;">
-            &copy; 2025 Andrej Rajkov. Built for applying to Graduate degree studies.
+            &copy; 2026 Andrej Rajkov. Built for applying to Graduate degree studies.
         </footer>
     </div>
 
-    
     <script>
         // --- LIGHTBOX LOGIC ---
         let currentLightboxImages = [];
@@ -798,25 +1093,22 @@
         function openLightbox(idPrefix, index) {
             const container = document.getElementById(`carousel-${idPrefix}`);
             if(!container) return;
-
-
             const imgs = container.querySelectorAll('.carousel-slide img');
-            if(imgs.length === 0) return; // No images to show
-
+            if(imgs.length === 0) return;
             currentLightboxImages = Array.from(imgs).map(img => img.src);
             currentLightboxIndex = index;
-
             updateLightboxImage();
             lightboxElement.style.display = "flex";
+            document.getElementById('dark-mode-toggle').style.display = 'none';
         }
 
         function closeLightbox(e) {
             lightboxElement.style.display = "none";
+            document.getElementById('dark-mode-toggle').style.display = 'flex';
         }
 
         function changeLightboxSlide(n) {
             currentLightboxIndex += n;
-            // Loop around
             if (currentLightboxIndex >= currentLightboxImages.length) {
                 currentLightboxIndex = 0;
             } else if (currentLightboxIndex < 0) {
@@ -826,7 +1118,6 @@
         }
 
         function updateLightboxImage() {
-            // Add a fade effect (optional, simple opacity toggle)
             lightboxImgElement.style.opacity = 0;
             setTimeout(() => {
                 lightboxImgElement.src = currentLightboxImages[currentLightboxIndex];
@@ -848,49 +1139,38 @@
         });
 
         function handleSwipe() {
-            const threshold = 50; // min distance for swipe
-            if (touchEndX < touchStartX - threshold) {
-                // Swiped Left -> Next Image
-                changeLightboxSlide(1);
-            }
-            if (touchEndX > touchStartX + threshold) {
-                // Swiped Right -> Prev Image
-                changeLightboxSlide(-1);
-            }
+            const threshold = 50;
+            if (touchEndX < touchStartX - threshold) { changeLightboxSlide(1); }
+            if (touchEndX > touchStartX + threshold) { changeLightboxSlide(-1); }
         }
 
         // --- CAROUSEL LOGIC ---
         const slideIndexMap = {
-            'netguard': 0, 
+            'netguard': 0,
+            'cert': 0,
             'subway': 0,
             'network': 0,
             'baseball': 0,
             'pong': 0,
-            'chaslav': 0
+            'chaslav': 0,
+            'bus': 0,
+            'pan': 0,
+            'gym': 0,
+            'secplus': 0
         };
 
-        const visibleSlides = 3; 
+        const visibleSlides = 3;
 
         function moveSlide(idPrefix, n) {
-            // Calculate max index dynamically based on number of slides
             const container = document.getElementById(`carousel-${idPrefix}`);
             if (!container) return;
             const slides = container.querySelectorAll('.carousel-slide');
             const totalSlides = slides.length;
-            
-            // If total slides <= visible, no scrolling needed
             if (totalSlides <= visibleSlides) return;
-
             const maxIndex = totalSlides - visibleSlides;
-
             let newIndex = slideIndexMap[idPrefix] + n;
-
-            if (newIndex > maxIndex) {
-                newIndex = 0; 
-            } else if (newIndex < 0) {
-                newIndex = maxIndex; 
-            }
-            
+            if (newIndex > maxIndex) { newIndex = 0; }
+            else if (newIndex < 0) { newIndex = maxIndex; }
             goToSlide(idPrefix, newIndex);
         }
 
@@ -898,49 +1178,78 @@
             slideIndexMap[idPrefix] = index;
             const carouselContainer = document.getElementById(`carousel-${idPrefix}`);
             if (!carouselContainer) return;
-
             const track = carouselContainer.querySelector('.carousel-track');
             const dots = carouselContainer.querySelectorAll('.dot');
-            
             if (window.innerWidth > 600) {
-                 const gapPx = 2; // Reduced gap from 6 to 2
-                 const containerWidth = carouselContainer.offsetWidth;
-                 const itemWidth = (containerWidth - (gapPx * (visibleSlides - 1))) / visibleSlides;
-                 
-                 const offsetPx = -index * (itemWidth + gapPx);
-                 track.style.transform = `translateX(${offsetPx}px)`;
+                const gapPx = 2;
+                const containerWidth = carouselContainer.offsetWidth;
+                const itemWidth = (containerWidth - (gapPx * (visibleSlides - 1))) / visibleSlides;
+                const offsetPx = -index * (itemWidth + gapPx);
+                track.style.transform = `translateX(${offsetPx}px)`;
             } else {
-                 const offset = -index * 100;
-                 track.style.transform = `translateX(${offset}%)`;
+                const offset = -index * 100;
+                track.style.transform = `translateX(${offset}%)`;
             }
-           
             if(dots.length > 0) {
                 dots.forEach(dot => dot.classList.remove('active'));
-                if (dots[index]) {
-                    dots[index].classList.add('active');
-                }
+                if (dots[index]) { dots[index].classList.add('active'); }
             }
         }
         
         function handleResize() {
             goToSlide('netguard', slideIndexMap['netguard']);
+            if(document.getElementById('carousel-cert')) goToSlide('cert', slideIndexMap['cert']);
             if(document.getElementById('carousel-subway')) goToSlide('subway', slideIndexMap['subway']);
             if(document.getElementById('carousel-network')) goToSlide('network', slideIndexMap['network']);
             if(document.getElementById('carousel-baseball')) goToSlide('baseball', slideIndexMap['baseball']);
             if(document.getElementById('carousel-pong')) goToSlide('pong', slideIndexMap['pong']);
             if(document.getElementById('carousel-chaslav')) goToSlide('chaslav', slideIndexMap['chaslav']);
+            if(document.getElementById('carousel-bus')) goToSlide('bus', slideIndexMap['bus']);
+            if(document.getElementById('carousel-pan')) goToSlide('pan', slideIndexMap['pan']);
+            if(document.getElementById('carousel-gym')) goToSlide('gym', slideIndexMap['gym']);
+            if(document.getElementById('carousel-secplus')) goToSlide('secplus', slideIndexMap['secplus']);
         }
         
         window.addEventListener('resize', handleResize);
 
         window.onload = function() {
             goToSlide('netguard', 0);
+            if(document.getElementById('carousel-cert')) goToSlide('cert', 0);
             if(document.getElementById('carousel-subway')) goToSlide('subway', 0);
             if(document.getElementById('carousel-network')) goToSlide('network', 0);
             if(document.getElementById('carousel-baseball')) goToSlide('baseball', 0);
             if(document.getElementById('carousel-pong')) goToSlide('pong', 0);
-             if(document.getElementById('carousel-chaslav')) goToSlide('chaslav', 0);
+            if(document.getElementById('carousel-chaslav')) goToSlide('chaslav', 0);
+            if(document.getElementById('carousel-bus')) goToSlide('bus', 0);
+            if(document.getElementById('carousel-pan')) goToSlide('pan', 0);
+            if(document.getElementById('carousel-gym')) goToSlide('gym', 0);
+            if(document.getElementById('carousel-secplus')) goToSlide('secplus', 0);
         };
+
+        // --- UPCOMING PROJECTS TOGGLE ---
+        function toggleUpcoming() {
+            const body = document.getElementById('upcoming-body');
+            const arrow = document.getElementById('upcoming-arrow');
+            body.classList.toggle('open');
+            arrow.classList.toggle('open');
+        }
+
+        // --- DARK MODE LOGIC ---
+        const ICON_DARK  = '🌙';
+        const ICON_LIGHT = '☀️';
+
+        function toggleDarkMode() {
+            const isDark = document.body.classList.toggle('dark-mode');
+            document.getElementById('dark-mode-icon').textContent = isDark ? ICON_LIGHT : ICON_DARK;
+            localStorage.setItem('darkMode', isDark ? 'on' : 'off');
+        }
+
+        if (localStorage.getItem('darkMode') === 'on') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('dark-mode-icon').textContent = ICON_LIGHT;
+        } else {
+            document.getElementById('dark-mode-icon').textContent = ICON_DARK;
+        }
     </script>
 
 </body>
