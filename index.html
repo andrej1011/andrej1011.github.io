@@ -153,6 +153,28 @@
             border-bottom: 2px solid #c41230;
         }
 
+       a.project-link {
+            color: #000;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+        }
+
+        a.project-link::after {
+            content: "";
+            display: inline-block;
+            width: 0.62em;
+            height: 0.62em;
+            margin-left: 0.32em;
+            vertical-align: baseline;
+            background-color: currentColor;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2.5'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M18%2013v6a2%202%200%200%201-2%202H5a2%202%200%200%201-2-2V8a2%202%200%200%201%202-2h6'/%3E%3Cpolyline%20points='15%203%2021%203%2021%209'/%3E%3Cline%20x1='10'%20y1='14'%20x2='21'%20y2='3'/%3E%3C/svg%3E") no-repeat center / contain;
+            mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2.5'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M18%2013v6a2%202%200%200%201-2%202H5a2%202%200%200%201-2-2V8a2%202%200%200%201%202-2h6'/%3E%3Cpolyline%20points='15%203%2021%203%2021%209'/%3E%3Cline%20x1='10'%20y1='14'%20x2='21'%20y2='3'/%3E%3C/svg%3E") no-repeat center / contain;
+        }
+
+        a.project-link:hover {
+            color: #c41230;
+            border-bottom-color: #c41230;
+        }
+
         .tech-stack {
             display: inline-block;
             margin-left: 10px;
@@ -456,10 +478,12 @@
         body.dark-mode .section-title {
             color: #e05070;
         }
-        body.dark-mode .project-link {
+        body.dark-mode a.project-link {
             color: #e0e0e0;
+            border-bottom-color: rgba(255, 255, 255, 0.10);
         }
-        body.dark-mode .project-link:hover {
+        body.dark-mode a.project-link:hover {
+            color: #e05070;
             border-bottom-color: #e05070;
         }
         body.dark-mode .project-tech {
@@ -607,7 +631,7 @@
             <h2>Student of Information Technology at University of Novi Sad</h2>
             <div class="contact-links">
                 <a href="https://www.linkedin.com/in/andrej-rajkov/" target="_blank" class="contact-btn btn-linkedin-simple">LinkedIn</a>
-                <a href="portoflio_files/CV Andrej Rajkov Mar2026.pdf" download class="contact-btn btn-cv">Download CV</a>
+                <a href="portoflio_files/CV_Andrej-Rajkov.pdf" download class="contact-btn btn-cv">Download CV</a>
                 <a href="https://github.com/andrej1011" target="_blank" class="contact-btn btn-github-simple">GitHub</a>
             </div>
         </header>
@@ -688,23 +712,6 @@
 
                 <article class="project">
                     <div class="project-header">
-                        <span class="project-link">Hospital Data System</span>
-                        <div class="tech-stack">
-                            <span class="project-tech">Java</span>
-                            <span class="project-tech">Spring Boot</span>
-                            <span class="project-tech">MySQL</span>
-                            <span class="project-tech">GDPR</span>
-                        </div>
-                    </div>
-                    <p class="short-desc">A full three-tier hospital information system built as the project for the Development of Information Systems course.</p>
-                    <div class="long-desc">
-                        <p>The project requires designing a complete information system from database schema through business logic to UI. I chose a hospital data system specifically to practice implementing <strong>GDPR compliance</strong> and security regulations in a real-world sensitive data context. Built using Java Servlets, Spring Boot, Spring MVC, Spring Data, and MySQL.</p>
-                    </div>
-                    
-                </article>
-
-                <article class="project">
-                    <div class="project-header">
                         <span class="project-link">Barbell Gym Calculator</span>
                         <div class="tech-stack">
                             <span class="project-tech">Angular</span>
@@ -766,6 +773,100 @@
         <div class="section-title">PORTFOLIO</div>
 
         <main>
+            <article class="project">
+                <div class="project-header">
+                    <a href="" target="_blank" class="project-link">MovieMate - Movie Ticket Booking Platform</a>
+                    <div class="tech-stack">
+                        <span class="project-tech">FastAPI</span>
+                        <span class="project-tech">Python</span>
+                        <span class="project-tech">PostgreSQL</span>
+                        <span class="project-tech">Angular</span>
+                        <span class="project-tech">Docker</span>
+                    </div>
+                </div>
+                <p class="short-desc">A full-stack movie ticket booking system built during my internship at Eclept.</p>
+                <div class="long-desc">
+                    <p>
+                        <strong>Role-based access control:</strong> Guests browse, registered users book tickets and manage their bookings, admins manage movies, auditoriums, genres, and showings.
+                    </p>
+                    <p>
+                        <strong>Secure auth:</strong> JWT bearer tokens with bcrypt-hashed passwords, password strength validation, and protected routes through FastAPI dependency injection.
+                    </p>
+                    <p>
+                        <strong>Booking integrity:</strong> Row-level locks prevent overbooking under concurrent requests. Cancelling a showing cascades to all its bookings. A background scheduler auto-expires bookings once the showing has ended.
+                    </p>
+                    <p>
+                        <strong>Clean layered architecture:</strong> API routes → services → SQLAlchemy models, with Pydantic validation at the boundary and Alembic-managed schema migrations.
+                    </p>
+                </div>
+                <div class="project-resources">
+                    <a href="#" target="_blank" class="cmu-btn btn-prof">Launch App</a>
+                    <a href="https://github.com/marko-ecl/eclept_internship_moviemate_andrej_rajkov" target="_blank" class="cmu-btn" style="background-color: #333;">GitHub Repo</a>
+                </div>
+            </article>
+            <article class="project">
+                <div class="project-header">
+                    <a href="https://github.com/andrej1011/pmf-ris" target="_blank" class="project-link">GDPR Hospital Information System</a>
+                    <div class="tech-stack">
+                        <span class="project-tech">Java</span>
+                        <span class="project-tech">Spring Boot</span>
+                        <span class="project-tech">Spring Security</span>
+                        <span class="project-tech">MySQL</span>
+                        <span class="project-tech">GDPR</span>
+                    </div>
+                </div>
+                <p class="short-desc">A role-based hospital records system designed around GDPR data-protection rights.</p>
+                <div class="carousel-container" id="carousel-hospital">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="https://raw.githubusercontent.com/andrej1011/pmf-ris/portfolio-deployment/docs/login.png" alt="Login screen" onclick="openLightbox('hospital', 0); event.stopPropagation();">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://raw.githubusercontent.com/andrej1011/pmf-ris/portfolio-deployment/docs/gdpr.png" alt="GDPR requests" onclick="openLightbox('hospital', 5); event.stopPropagation();">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://raw.githubusercontent.com/andrej1011/pmf-ris/portfolio-deployment/docs/report.png" alt="PDF report" onclick="openLightbox('hospital', 2); event.stopPropagation();">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://raw.githubusercontent.com/andrej1011/pmf-ris/portfolio-deployment/docs/past-exams.png" alt="Past examinations" onclick="openLightbox('hospital', 3); event.stopPropagation();">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://raw.githubusercontent.com/andrej1011/pmf-ris/portfolio-deployment/docs/doctor.png" alt="Doctor's dashboard" onclick="openLightbox('hospital', 1); event.stopPropagation();">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://raw.githubusercontent.com/andrej1011/pmf-ris/portfolio-deployment/docs/recepti.png" alt="Patient prescriptions" onclick="openLightbox('hospital', 4); event.stopPropagation();">
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev-btn" onclick="moveSlide('hospital', -1)">&#10094;</button>
+                    <button class="carousel-btn next-btn" onclick="moveSlide('hospital', 1)">&#10095;</button>
+                    <div class="carousel-dots">
+                        <div class="dot active" data-slide="0" onclick="goToSlide('hospital', 0)"></div>
+                        <div class="dot" data-slide="1" onclick="goToSlide('hospital', 1)"></div>
+                        <div class="dot" data-slide="2" onclick="goToSlide('hospital', 2)"></div>
+                        <div class="dot" data-slide="3" onclick="goToSlide('hospital', 3)"></div>
+                        <div class="dot" data-slide="4" onclick="goToSlide('hospital', 4)"></div>
+                        <div class="dot" data-slide="5" onclick="goToSlide('hospital', 5)"></div>
+                    </div>
+                </div>
+                <div class="long-desc">
+                    <p>
+                        <strong>GDPR built in from the start:</strong> Patients can request data access, correction, PDF export, or full erasure of their record, and an admin reviews and approves each request before it takes effect.
+                    </p>
+                    <p>
+                        <strong>Role-based access control:</strong> Nurses register patients and book exams, doctors run visits and print reports, patients manage their own records.
+                    </p>
+                    <p>
+                        <strong>Audit trail &amp; reporting:</strong> Every sensitive action is logged with user, timestamp and IP address. Examination reports, GDPR data exports and monthly statistics are generated as PDFs via JasperReports.
+                    </p>
+                    <p>
+                        <strong>Deployed:</strong> Docker container running live on Render alongside a TiDB Cloud (MySQL) database.
+                    </p>
+                </div>
+                <div class="project-resources">
+                    <a href="https://andrej1011.github.io/ris" target="_blank" class="cmu-btn btn-prof">Launch App</a>
+                </div>
+            </article>
+
             <article class="project">
                 <div class="project-header">
                     <a href="https://github.com/andrej1011/pris_team6" target="_blank" class="project-link">FPGA Router & Congestion Visualizer</a>
@@ -1143,6 +1244,7 @@
 
         // --- CAROUSEL LOGIC ---
         const slideIndexMap = {
+            'hospital': 0,
             'netguard': 0,
             'cert': 0,
             'subway': 0,
@@ -1194,6 +1296,7 @@
         }
         
         function handleResize() {
+            if(document.getElementById('carousel-hospital')) goToSlide('hospital', slideIndexMap['hospital']);
             goToSlide('netguard', slideIndexMap['netguard']);
             if(document.getElementById('carousel-cert')) goToSlide('cert', slideIndexMap['cert']);
             if(document.getElementById('carousel-subway')) goToSlide('subway', slideIndexMap['subway']);
@@ -1210,6 +1313,7 @@
         window.addEventListener('resize', handleResize);
 
         window.onload = function() {
+            if(document.getElementById('carousel-hospital')) goToSlide('hospital', 0);
             goToSlide('netguard', 0);
             if(document.getElementById('carousel-cert')) goToSlide('cert', 0);
             if(document.getElementById('carousel-subway')) goToSlide('subway', 0);
