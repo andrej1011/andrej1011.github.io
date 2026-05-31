@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>andrej1011 - Hospital Information System</title>
+<link rel="icon" href="data:image/x-icon;base64,AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAABPT0//j4+P/42Njf+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/4+Pj/+Pj4//j4+P/42Njf+Pj4//T09P/5WVlf////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+VlZX/i4uL//z8/P/5+fn//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/5+fn//Pz8/4uLi/+NjY3///////z8/P/////////////////////////////////////////////////+/v//+/v+//v7/v/7+/7/+/v+//v7/v/7+/7//v7///////////////////////////////////////////////////z8/P//////jY2N/42Njf///////Pz8/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Pz8//////+NjY3/jY2N///////8/Pz///////////////////////////////////////39////////19j1/25v3/9xcuH/cHDh/3Bw4f9xceH/b3Dg/97e9v///////f3////////////////////////////////////////8/Pz//////42Njf+NjY3///////z8/P///////////////////////////////////////Pz+//////+0tO3/AADF/wAAyf8AAMj/AADI/wAAyP8AAMb/wMHw///////8/P7///////////////////////////////////////z8/P//////jY2N/42Njf///////Pz8///////////////////////////////////////8/P7//////7q67v8EBMr/BwbO/wUEzf8FBM3/BgXN/wQEy//FxvH///////z8/v///////////////////////////////////////Pz8//////+NjY3/jY2N///////8/Pz///////////////////////////////////////z8/v//////ubnu/wAAyf8DAs3/AQDM/wEAzP8CAcz/AADK/8TF8f///////Pz+///////////////////////////////////////8/Pz//////42Njf+NjY3///////z8/P///////////////////////////////////////Pz+//////+5ue7/AADJ/wMCzf8BAMz/AQDM/wIBzP8AAMr/xMXx///////8/P7///////////////////////////////////////z8/P//////jY2N/42Njf///////Pz8/////////////f3///z8/v/8/P7//Pz+//z8/v/5+f3//Pz+/7e37v8AAMn/AwLN/wEAzP8BAMz/AgHM/wAAyv/Cw/H//Pz+//n5/f/8/P7//Pz+//z8/v/8/P7//f3//////////////Pz8//////+NjY3/jY2N///////8/Pz/////////////////////////////////////////////////wcLw/wAAyf8DAs3/AQDM/wEAzP8CAcz/AADK/83O8//////////////////////////////////////////////////8/Pz//////42Njf+NjY3///////z8/P/+/v///////9jX9P/Hx/H/yMny/8jI8v/IyPL/xcXx/8nJ8v+Rkeb/AADK/wMCzf8BAMz/AQDM/wIBzP8AAMv/mpvo/8nJ8v/FxvH/yMjy/8jI8v/JyfL/x8fx/9va9f///////v7///z8/P//////jY2N/42Njf///////Pz8//z8////////RkbX/wAAx/8AAMv/AADK/wAAyv8AAMr/AADK/wAAy/8BAMz/AQDM/wEAzP8BAMz/AQDM/wEAzP8AAMv/AADK/wAAyv8AAMr/AADK/wAAy/8AAMf/VFPY///////8/P7//Pz8//////+NjY3/jY2N///////8/Pz//Pz///////9MTNn/AQHJ/wUEzf8CAcz/AgHM/wIBzP8CAcz/AgHM/wEAzP8BAMz/AQDM/wEAzP8BAMz/AQDM/wIBzP8CAcz/AgHM/wIBzP8CAcz/BgXN/wEByf9ZWNr///////z8/v/8/Pz//////42Njf+NjY3///////z8/P/8/P///////0tL2f8AAMn/BAPN/wEAzP8BAMz/AQDM/wEAzP8BAMz/AQDM/wEAzP8BAMz/AQDM/wEAzP8BAMz/AQDM/wEAzP8BAMz/AQDM/wEAzP8FBM3/AADJ/1hX2v///////Pz+//z8/P//////jY2N/42Njf///////Pz8//z8////////S0vZ/wAAyf8EA83/AQDM/wEAzP8BAMz/AQDM/wEAzP8BAMz/AQDM/wEAzP8BAMz/AQDM/wEAzP8BAMz/AQDM/wEAzP8BAMz/AQDM/wUEzf8AAMn/WFfa///////8/P7//Pz8//////+NjY3/jY2N///////8/Pz//Pz///////9MTNn/AQHJ/wUEzf8CAcz/AgHM/wIBzP8CAcz/AgHM/wEAzP8BAMz/AQDM/wEAzP8BAMz/AQDM/wIBzP8CAcz/AgHM/wIBzP8CAcz/BgXN/wEByf9ZWNr///////z8/v/8/Pz//////42Njf+NjY3///////z8/P/8/P///////0dG1/8AAMf/AADL/wAAyv8AAMr/AADK/wAAyv8AAMv/AQDM/wEAzP8BAMz/AQDM/wEAzP8BAMz/AADL/wAAyv8AAMr/AADK/wAAyv8AAMv/AADH/1NT2P///////Pz+//z8/P//////jY2N/42Njf///////Pz8//7+////////2Nj1/8fH8v/JyfP/yMjz/8jI8//GxvL/ycnz/5GR5v8AAMr/AwLN/wEAzP8BAMz/AgHM/wAAyv+am+j/ycnz/8bG8v/IyPP/yMjz/8nJ8//Hx/L/2tv2///////+/v///Pz8//////+NjY3/jY2N///////8/Pz/////////////////////////////////////////////////wsLw/wAAyf8DAs3/AQDM/wEAzP8CAcz/AADK/83O8//////////////////////////////////////////////////8/Pz//////42Njf+NjY3///////z8/P////////////39///8/P7//Pz+//z8/v/8/P7/+fn9//z8/v+3t+7/AADJ/wMCzf8BAMz/AQDM/wIBzP8AAMr/wsPx//z8/v/5+f3//Pz+//z8/v/8/P7//Pz+//39//////////////z8/P//////jY2N/42Njf///////Pz8///////////////////////////////////////8/P7//////7m57v8AAMn/AwLN/wEAzP8BAMz/AgHM/wAAyv/ExfH///////z8/v///////////////////////////////////////Pz8//////+NjY3/jY2N///////8/Pz///////////////////////////////////////z8/v//////ubnu/wAAyf8DAs3/AQDM/wEAzP8CAcz/AADK/8TF8f///////Pz+///////////////////////////////////////8/Pz//////42Njf+NjY3///////z8/P///////////////////////////////////////Pz+//////+6uu7/BATK/wcGzv8FBM3/BQTN/wYFzf8EBMv/xcbx///////8/P7///////////////////////////////////////z8/P//////jY2N/42Njf///////Pz8///////////////////////////////////////8/P7//////7S07f8AAMX/AADK/wAAyf8AAMn/AADJ/wAAxv/AwfD///////z8/v///////////////////////////////////////Pz8//////+NjY3/jY2N///////8/Pz///////////////////////////////////////39/v//////19j1/25v3v9wceH/b3Dg/29w4P9wceD/bm/f/97e9v///////f3+///////////////////////////////////////8/Pz//////42Njf+NjY3///////z8/P////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////z8/P//////jY2N/42Njf///////Pz8//////////////////////////////////////////////////7+///7+/7/+/v+//v7/v/7+/7/+/v+//v7/v/+/v///////////////////////////////////////////////////Pz8//////+NjY3/i4uL//z8/P/5+fn//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/5+fn//Pz8/4uLi/+VlZX/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////lZWV/09PT/+Pj4//jY2N/46Ojv+Ojo7/jo6O/46Ojv+Ojo7/jo6O/46Ojv+Ojo7/jo6O/46Ojv+Ojo7/jo6O/46Ojv+Ojo7/jo6O/46Ojv+Ojo7/jo6O/46Ojv+Ojo7/jo6O/46Ojv+Ojo7/jo6O/46Ojv+Ojo7/jY2N/4+Pj/9PT0//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbfbf9;
+    --ink:#13151a;
+    --muted:#71757e;
+    --red:#e01029;
+    --red-deep:#b00c20;
+    --line:#ededea;
+    --white:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Manrope',sans-serif;background:var(--bg);color:var(--ink);
+    -webkit-font-smoothing:antialiased;min-height:100vh;
+    display:flex;flex-direction:column;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(680px 420px at 50% -8%, rgba(224,16,41,.07), transparent 65%);
+  }
+  /* vignette */
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:2;
+    background:radial-gradient(125% 120% at 50% 42%, transparent 58%, rgba(19,21,26,.06) 100%);
+  }
+  /* film grain */
+  .grain{
+    position:fixed;inset:0;pointer-events:none;z-index:2;opacity:.045;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  main{
+    flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:112px 28px 56px;position:relative;z-index:1;
+  }
+
+  .logo{
+    width:62px;height:62px;display:grid;place-items:center;margin-bottom:38px;
+    opacity:0;animation:rise .7s .05s forwards;
+  }
+  .logo svg{width:62px;height:62px;overflow:visible}
+  .logo .cross{transform-box:fill-box;transform-origin:center;animation:heartbeat 2.4s ease-in-out infinite;filter:drop-shadow(0 6px 18px rgba(224,16,41,.3))}
+  @keyframes heartbeat{0%,100%{transform:scale(1)}7%{transform:scale(1.1)}14%{transform:scale(1)}21%{transform:scale(1.05)}28%{transform:scale(1)}}
+
+  /* live status badge */
+  .status{
+    position:fixed;top:20px;right:22px;z-index:50;
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.04em;
+    padding:7px 13px;border-radius:999px;border:1px solid var(--line);
+    background:rgba(255,255,255,.8);backdrop-filter:blur(8px);
+    color:var(--muted);text-transform:uppercase;
+    opacity:0;animation:rise 1.6s .3s forwards;
+  }
+  .status .dot{width:8px;height:8px;border-radius:50%;background:#9aa0a8;transition:background .3s}
+  .status.online .dot{background:#19c37d;box-shadow:0 0 0 0 rgba(25,195,125,.5);animation:beat 1.8s infinite}
+  .status.online{color:#0a8f57}
+  .status.offline .dot{background:var(--red)}
+  .status.offline{color:var(--red-deep)}
+  @keyframes beat{0%{box-shadow:0 0 0 0 rgba(25,195,125,.5)}70%{box-shadow:0 0 0 8px rgba(25,195,125,0)}100%{box-shadow:0 0 0 0 rgba(25,195,125,0)}}
+
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:clamp(.8rem,1.5vw,1rem);letter-spacing:.14em;line-height:1.4;
+    color:var(--muted);text-transform:uppercase;margin-bottom:22px;font-weight:500;
+    opacity:0;animation:rise .7s .12s forwards;
+  }
+  h1{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(1.9rem,5vw,3.4rem);line-height:1.04;letter-spacing:-.025em;
+    margin:0 auto 30px;color:var(--ink);white-space:nowrap;
+    opacity:0;animation:rise .8s .2s forwards;
+  }
+  h1 em{font-style:italic;color:var(--red);animation:toRed 1.6s 1.6s both}
+  @keyframes toRed{from{color:var(--ink)}to{color:var(--red)}}
+  .btn svg{width:17px;height:17px;transition:transform .18s ease}
+  .btn-primary:hover svg{transform:translateX(4px)}
+  .sub{
+    font-size:clamp(.95rem,1.7vw,1.08rem);color:var(--muted);font-weight:400;line-height:1.55;
+    max-width:48ch;margin:0 auto 48px;
+    opacity:0;animation:rise .8s .28s forwards;
+  }
+  .cta{
+    display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;
+    opacity:0;animation:rise .8s .36s forwards;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-weight:600;font-size:.95rem;padding:14px 24px;border-radius:12px;
+    text-decoration:none;border:1px solid transparent;cursor:pointer;
+    transition:transform .16s ease, box-shadow .16s ease, background .16s ease, border-color .16s ease;
+  }
+  .btn svg{width:17px;height:17px}
+  .btn-primary{
+    background:var(--red);color:#fff;
+    box-shadow:0 1px 2px rgba(176,12,32,.25),0 10px 28px -8px rgba(224,16,41,.5);
+  }
+  .btn-primary:hover{transform:translateY(-2px);background:var(--red-deep);box-shadow:0 2px 5px rgba(176,12,32,.3),0 18px 38px -10px rgba(224,16,41,.6)}
+  .btn-ghost{background:var(--white);color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover{transform:translateY(-2px);border-color:#dcdcd8;box-shadow:0 12px 26px -16px rgba(19,21,26,.35)}
+
+  /* live ECG monitor */
+  .monitor{
+    width:100%;max-width:760px;margin:96px auto 0;position:relative;height:130px;overflow:hidden;
+    border-radius:14px;
+    opacity:0;animation:rise 1s .5s forwards;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+            mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  }
+  .monitor .grid{
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(224,16,41,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(224,16,41,.06) 1px, transparent 1px),
+      linear-gradient(rgba(224,16,41,.13) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(224,16,41,.13) 1px, transparent 1px);
+    background-size:13px 13px,13px 13px,65px 65px,65px 65px;
+    -webkit-mask-image:linear-gradient(transparent,#000 32%,#000 68%,transparent);
+            mask-image:linear-gradient(transparent,#000 32%,#000 68%,transparent);
+  }
+  .monitor svg{position:absolute;inset:0;width:100%;height:130px;display:block;overflow:visible}
+  .ecg-base{fill:none;stroke:var(--red);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.14}
+  .ecg-live{
+    fill:none;stroke:var(--red);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;
+    filter:drop-shadow(0 0 5px rgba(224,16,41,.55));
+  }
+  .ecg-dot{fill:#fff;filter:drop-shadow(0 0 6px rgba(224,16,41,.95))}
+
+  .stack{
+    display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:40px;
+    opacity:0;animation:rise .9s .6s forwards;
+  }
+  .chip{
+    font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted);
+    border:1px solid var(--line);background:var(--white);padding:5px 11px;border-radius:999px;
+  }
+
+  footer{
+    position:relative;z-index:1;text-align:center;padding:26px;
+    font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--muted);
+  }
+  footer a{color:var(--muted);text-decoration:none;transition:color .15s}
+  footer a:hover{color:var(--red)}
+
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+  @media(max-width:640px){
+    .btn{width:100%;justify-content:center}
+    .cta{flex-direction:column;width:100%;max-width:320px}
+    main{padding:72px 24px 30px}
+    h1{white-space:normal}
+    .status{top:14px;right:14px;font-size:.64rem;padding:6px 10px}
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="status" id="status"><span class="dot"></span><span id="statusText">Checking…</span></div>
+
+<main>
+  <div class="logo">
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <g class="cross">
+        <rect x="25" y="6" width="14" height="52" rx="3" fill="#e01029"/>
+        <rect x="6" y="25" width="52" height="14" rx="3" fill="#e01029"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="eyebrow">GDPR Hospital Information System</div>
+  <h1>Patient data, kept <em>private</em> by design.</h1>
+  <p class="sub">A role-based hospital records system with built-in GDPR data rights, audit logging and PDF reporting.</p>
+
+  <div class="cta">
+    <a class="btn btn-primary" href="https://pmf-ris.onrender.com/Bolnica/" target="_blank" rel="noopener">
+      Launch App
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <a class="btn btn-ghost" href="https://github.com/andrej1011/pmf-ris#readme" target="_blank" rel="noopener">
+      How to Use
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    </a>
+    <a class="btn btn-ghost" href="https://github.com/andrej1011/pmf-ris" target="_blank" rel="noopener">
+      GitHub Repo
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+    </a>
+  </div>
+
+  <div class="monitor">
+    <div class="grid"></div>
+    <svg id="ecg" viewBox="0 0 1200 130" preserveAspectRatio="none">
+      <path id="ecgBase" class="ecg-base" d=""/>
+      <path id="ecgLive" class="ecg-live" d=""/>
+      <circle id="ecgDot" class="ecg-dot" r="3.6" cx="0" cy="65"/>
+    </svg>
+  </div>
+
+  <div class="stack">
+    <span class="chip">Spring Boot 4</span>
+    <span class="chip">Java</span>
+    <span class="chip">MySQL</span>
+    <span class="chip">JSP</span>
+    <span class="chip">Spring Security</span>
+  </div>
+</main>
+
+<footer>
+  Student project @ <a href="https://www.pmf.uns.ac.rs/en/">PMFUNS</a> · 2026 · <a href="https://github.com/andrej1011/pmf-ris" target="_blank" rel="noopener">andrej1011/pmf-ris</a>
+</footer>
+
+<script>
+  /* ---- ECG sweep: bright comet over faint trace ---- */
+  (function(){
+    var tile = "h70 q15,-14 30,0 h25 l8,7 l12,-52 l10,66 l8,-21 h22 q30,-22 60,0 h55";
+    var d = "M0,65 "; for(var i=0;i<4;i++) d += tile + " ";
+    d = d.trim();
+    var base=document.getElementById('ecgBase');
+    var live=document.getElementById('ecgLive');
+    var dot=document.getElementById('ecgDot');
+    base.setAttribute('d',d); live.setAttribute('d',d);
+    var L=live.getTotalLength(), tail=230;
+    live.style.strokeDasharray=tail+' '+(L+tail);
+    var head=0, speed=L/6, last=performance.now();
+    function frame(now){
+      var dt=(now-last)/1000; last=now;
+      head+=speed*dt; if(head>L+tail) head=0;
+      live.style.strokeDashoffset=(tail-head);
+      var p=live.getPointAtLength(Math.max(0,Math.min(head,L)));
+      dot.setAttribute('cx',p.x); dot.setAttribute('cy',p.y);
+      dot.style.opacity=head>L?0:1;
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
+
+  /* ---- live status: ping the deployed app ---- */
+  (function(){
+    var el = document.getElementById('status');
+    var txt = document.getElementById('statusText');
+    function check(){
+      var ctrl = new AbortController();
+      var to = setTimeout(function(){ctrl.abort();}, 9000);
+      fetch('https://pmf-ris.onrender.com/Bolnica/health', {mode:'no-cors', cache:'no-store', signal:ctrl.signal})
+        .then(function(){ clearTimeout(to); el.className='status online'; txt.textContent='System Online'; })
+        .catch(function(){ clearTimeout(to); el.className='status offline'; txt.textContent='System Offline'; });
+    }
+    check();
+    setInterval(check, 60000);
+  })();
+</script>
+
+</body>
+</html>
