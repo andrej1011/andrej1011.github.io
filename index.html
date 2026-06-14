@@ -681,37 +681,6 @@
 
                 <article class="project">
                     <div class="project-header">
-                        <span class="project-link">PAN Cybersecurity Academy</span>
-                        <div class="tech-stack">
-                            <span class="project-tech">Palo Alto Networks</span>
-                            <span class="project-tech">Cybersecurity</span>
-                            <span class="project-tech">ARC Belgrade</span>
-                        </div>
-                    </div>
-                    <p class="short-desc">A 4-month intensive cybersecurity programme at the American Resource Center in Belgrade, in partnership with Palo Alto Networks.</p>
-                    <div class="carousel-container" id="carousel-pan">
-                        <div class="carousel-track">
-                            <div class="carousel-slide">
-                                <img src="portoflio_files/Pan1.png" alt="PAN Academy 1" onclick="openLightbox('pan', 0); event.stopPropagation();">
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="portoflio_files/PAN2.png" alt="PAN Academy 2" onclick="openLightbox('pan', 1); event.stopPropagation();">
-                            </div>
-                        </div>
-                        <button class="carousel-btn prev-btn" onclick="moveSlide('pan', -1)">&#10094;</button>
-                        <button class="carousel-btn next-btn" onclick="moveSlide('pan', 1)">&#10095;</button>
-                        <div class="carousel-dots">
-                            <div class="dot active" onclick="goToSlide('pan', 0)"></div>
-                            <div class="dot" onclick="goToSlide('pan', 1)"></div>
-                        </div>
-                    </div>
-                    <div class="long-desc">
-                        <p>Running from February 27 to June 26, 2026, the academy covers network defense, cloud security, threat prevention, and hands-on labs taught by professor Slavko Gajin. The programme leads to globally recognized Palo Alto Networks certifications and is hosted at ARC Ložionica, Belgrade.</p>
-                    </div>
-                </article>
-
-                <article class="project">
-                    <div class="project-header">
                         <span class="project-link">Barbell Gym Calculator</span>
                         <div class="tech-stack">
                             <span class="project-tech">Angular</span>
@@ -758,7 +727,7 @@
                             <span class="project-tech">SY0-701</span>
                         </div>
                     </div>
-                    <p class="short-desc">Planning to take the CompTIA Security+ exam in late May or early June 2026</p>
+                    <p class="short-desc">Planning to take the CompTIA Security+ exam in late September or early October 2026</p>
                     <div class="carousel-container" id="carousel-secplus">
                         <div class="carousel-track">
                             <div class="carousel-slide">
@@ -775,33 +744,61 @@
         <main>
             <article class="project">
                 <div class="project-header">
-                    <a href="" target="_blank" class="project-link">MovieMate - Movie Ticket Booking Platform</a>
+                    <a href="https://github.com/andrej1011/eclept-praksa" target="_blank" class="project-link">MovieMate</a>
                     <div class="tech-stack">
                         <span class="project-tech">FastAPI</span>
-                        <span class="project-tech">Python</span>
                         <span class="project-tech">PostgreSQL</span>
                         <span class="project-tech">Angular</span>
-                        <span class="project-tech">Docker</span>
                     </div>
                 </div>
-                <p class="short-desc">A full-stack movie ticket booking system built during my internship at Eclept.</p>
+                <p class="short-desc">A full-stack movie booking application.</p>
+                <div class="carousel-container" id="carousel-moviemate">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="https://raw.githubusercontent.com/andrej1011/eclept-praksa/refs/heads/production-branch/docs/Picture1.png" alt="Home screen" onclick="openLightbox('moviemate', 0); event.stopPropagation();">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://raw.githubusercontent.com/andrej1011/eclept-praksa/refs/heads/production-branch/docs/Picturew.png" alt="Movie detail" onclick="openLightbox('moviemate', 5); event.stopPropagation();">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://raw.githubusercontent.com/andrej1011/eclept-praksa/refs/heads/production-branch/docs/Picture4.png" alt="Bookings" onclick="openLightbox('moviemate', 2); event.stopPropagation();">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://raw.githubusercontent.com/andrej1011/eclept-praksa/refs/heads/production-branch/docs/Picture5.png" alt="Admin panel" onclick="openLightbox('moviemate', 3); event.stopPropagation();">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://raw.githubusercontent.com/andrej1011/eclept-praksa/refs/heads/production-branch/docs/Picture6.png" alt="Dark mode" onclick="openLightbox('moviemate', 1); event.stopPropagation();">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://raw.githubusercontent.com/andrej1011/eclept-praksa/refs/heads/production-branch/docs/Picture7.png" alt="API Swagger UI" onclick="openLightbox('moviemate', 4); event.stopPropagation();">
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev-btn" onclick="moveSlide('moviemate', -1)">&#10094;</button>
+                    <button class="carousel-btn next-btn" onclick="moveSlide('moviemate', 1)">&#10095;</button>
+                    <div class="carousel-dots">
+                        <div class="dot active" data-slide="0" onclick="goToSlide('moviemate', 0)"></div>
+                        <div class="dot" data-slide="1" onclick="goToSlide('moviemate', 1)"></div>
+                        <div class="dot" data-slide="2" onclick="goToSlide('moviemate', 2)"></div>
+                        <div class="dot" data-slide="3" onclick="goToSlide('moviemate', 3)"></div>
+                        <div class="dot" data-slide="4" onclick="goToSlide('moviemate', 4)"></div>
+                        <div class="dot" data-slide="5" onclick="goToSlide('moviemate', 5)"></div>
+                    </div>
+                </div>
                 <div class="long-desc">
                     <p>
-                        <strong>Role-based access control:</strong> Guests browse, registered users book tickets and manage their bookings, admins manage movies, auditoriums, genres, and showings.
+                        Browse movies and showtimes, book seats, manage bookings, and administer the catalog.
                     </p>
                     <p>
-                        <strong>Secure auth:</strong> JWT bearer tokens with bcrypt-hashed passwords, password strength validation, and protected routes through FastAPI dependency injection.
+                        Built with FastAPI + PostgreSQL backend and Angular 22 frontend.
                     </p>
                     <p>
-                        <strong>Booking integrity:</strong> Row-level locks prevent overbooking under concurrent requests. Cancelling a showing cascades to all its bookings. A background scheduler auto-expires bookings once the showing has ended.
+                        Developed during an internship at Eclept.
                     </p>
-                    <p>
-                        <strong>Clean layered architecture:</strong> API routes → services → SQLAlchemy models, with Pydantic validation at the boundary and Alembic-managed schema migrations.
-                    </p>
+                    
                 </div>
                 <div class="project-resources">
-                    <a href="#" target="_blank" class="cmu-btn btn-prof">Launch App</a>
-                    <a href="https://github.com/marko-ecl/eclept_internship_moviemate_andrej_rajkov" target="_blank" class="cmu-btn" style="background-color: #333;">GitHub Repo</a>
+                    <a href="https://andrej1011.github.io/eclept-praksa/" target="_blank" class="cmu-btn btn-drive">Launch App</a>
+                    <a href="portoflio_files/MovieMate_Internship_Report.pdf" target="_blank" class="cmu-btn btn-pres">Project Documentation</a>
                 </div>
             </article>
             <article class="project">
@@ -863,7 +860,7 @@
                     </p>
                 </div>
                 <div class="project-resources">
-                    <a href="https://andrej1011.github.io/ris" target="_blank" class="cmu-btn btn-prof">Launch App</a>
+                    <a href="https://andrej1011.github.io/ris" target="_blank" class="cmu-btn btn-drive">Launch App</a>
                 </div>
             </article>
 
